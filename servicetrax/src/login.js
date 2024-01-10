@@ -1,17 +1,20 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const userCredentials = {
-    email: "test@test.com",
+    email: "test",
     password: "abc"
 };
 
 export function LoginInput() {
     const [credentials, setCredentials] = useState({ email: "", password: "" });
+    const navigate = useNavigate();
     
     const handleSubmit = (e) => {
         e.preventDefault();
         if(credentials.email === userCredentials.email && credentials.password === userCredentials.password) {
-            alert("You are logged in.");
+            alert("You are logged in.")
+                  navigate("/servicemain")  ;
         } else {
             alert("Incorrect email or password.");
         }
