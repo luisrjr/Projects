@@ -17,6 +17,7 @@ export function LoginInput() {
                   navigate("/servicemain")  ;
         } else {
             alert("Incorrect email or password.");
+            navigate("/")  ;
         }
     }
 
